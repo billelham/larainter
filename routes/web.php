@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,6 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 
-
 // Administrator & SuperAdministrator Control Panel Routes
 Route::group(['middleware' => ['role:administrator']], function () {
     Route::resource('users', 'UsersController');
@@ -51,8 +51,3 @@ Route::group(['middleware' => ['role:administrator']], function () {
     });
     // Dashboard
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-
-
-// User Meangament
-Route::get('user.management',[AdminPanel::Class, 'index'])->name('usermanger');
-                                         
