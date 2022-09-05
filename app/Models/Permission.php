@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models;/** check if use namespace App*/
 
-use Laratrust\Models\LaratrustPermission;
+use Laratrust\Models\LaratrustPermission;/** check if use Laratrust\LaratrustPermission*/
 
 class Permission extends LaratrustPermission
 {
